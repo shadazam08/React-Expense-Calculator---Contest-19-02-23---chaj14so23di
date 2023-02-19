@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React,{useState} from 'react'
 import '../styles/App.css';
 
 const App = () => {
@@ -7,15 +7,16 @@ const App = () => {
     const a = document.createElement("li");
     const b = document.getElementById("expense-input").value;
     a.innerHTML = b;
-    document.getelementByID("expense-list").appendChild(a);
-    const c = b.indexOf('-');
+    document.getElementById("expense-list").appendChild(a);
+    const c = b.indexOf('-');  
     const d = b.slice(c + 1).trim();
     setExpense(parseInt(d) + expense);
   }
+
   return (
     <div id="main">
       <input id="expense-input" />
-      <button id="expense-button">Add Expense</button>
+      <button id="expense-button" onClick={handle}>Add Expense</button>
       <div id="expense-list">
       </div>
       <div id="total-expense">
